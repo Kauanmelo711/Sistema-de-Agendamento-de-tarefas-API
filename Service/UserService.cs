@@ -33,25 +33,62 @@ namespace sistemaDeTarefasT2m.Service
 
                 )).ToList();
         }
-    
-    public async Task<User> ValidateUserAsync(string email, string senha)
+
+        public async Task<User> ValidateUserAsync(string email, string senha)
         {
-            return await _userRepository.GetByEmailAndPasswordAsync(email, senha);
+            var user = await _userRepository.GetByEmailAsync(email);
+            if (user == null)
+                throw new Exception("Usuário não encontrado");
+
+            bool senhaCorreta = BCrypt.Net.BCrypt.Verify(senha, user.Senha);
+            if (!senhaCorreta)
+                throw new Exception("Senha incorreta");
+
+            return user;
         }
         public async Task<User> RegisterUserAsync(RegisterDto dto)
         {
+            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(dto.Senha);
+
             var newUser = new User
             {
                 Nome = dto.Nome,
                 Email = dto.Email,
-                Senha = dto.Senha,
+                Senha = hashedPassword, 
                 DataCadastro = DateTime.UtcNow
             };
 
             await _userRepository.AddUserAsync(newUser);
             return newUser;
         }
+        public async Task<UserDto> GetUserByIdAsync(int id)
+        {
+            var user = await _userRepository.GetByIdAsync(id);
+            if (user == null)
+                throw new Exception("Usuário não encontrado");
 
+            return new UserDto(user.Id, user.Nome, user.Email, user.Senha, user.DataCadastro);
+        }
+
+        public async Task UpdateUserAsync(int id, UserDto dto)
+        {
+            var user = new User
+            {
+                Id = id,
+                Nome = dto.Nome!,
+                Email = dto.Email!,
+                Senha = BCrypt.Net.BCrypt.HashPassword(dto.Senha),
+                DataCadastro = dto.DataCadastro ?? DateTime.UtcNow
+            };
+            await _userRepository.UpdateAsync(user);
+        }
+
+        public async Task DeleteUserAsync(int id)
+        {
+            await _userRepository.DeleteAsync(id);
+        }
+
+       
     }
 }
 

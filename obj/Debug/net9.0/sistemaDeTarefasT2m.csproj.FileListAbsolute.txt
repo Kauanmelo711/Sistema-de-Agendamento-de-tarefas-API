@@ -44,3 +44,4 @@ C:\Users\kauan\source\repos\Sistema_de_tarefas_T2m_2\sistemaDeTarefasT2m\bin\Deb
 C:\Users\kauan\source\repos\Sistema_de_tarefas_T2m_2\sistemaDeTarefasT2m\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\kauan\source\repos\Sistema_de_tarefas_T2m_2\sistemaDeTarefasT2m\bin\Debug\net9.0\Newtonsoft.Json.dll
 C:\Users\kauan\source\repos\Sistema_de_tarefas_T2m_2\sistemaDeTarefasT2m\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\kauan\source\repos\Sistema_de_tarefas_T2m_2\sistemaDeTarefasT2m\bin\Debug\net9.0\BCrypt.Net-Next.dll
