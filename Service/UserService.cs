@@ -6,7 +6,7 @@ using sistemaDeTarefasT2m.Repository;
 
 namespace sistemaDeTarefasT2m.Service
 {
-    public class UserService: IUserService
+    public class UserService : IUserService
     {
 
         private readonly IUserRepository _userRepository;
@@ -30,32 +30,28 @@ namespace sistemaDeTarefasT2m.Service
                     user.Email,
                     user.Senha,
                     user.DataCadastro
-         
+
                 )).ToList();
+        }
+    
+    public async Task<User> ValidateUserAsync(string email, string senha)
+        {
+            return await _userRepository.GetByEmailAndPasswordAsync(email, senha);
+        }
+        public async Task<User> RegisterUserAsync(RegisterDto dto)
+        {
+            var newUser = new User
+            {
+                Nome = dto.Nome,
+                Email = dto.Email,
+                Senha = dto.Senha,
+                DataCadastro = DateTime.UtcNow
+            };
+
+            await _userRepository.AddUserAsync(newUser);
+            return newUser;
         }
 
     }
-    //    public async Task<User> GetUserByIdAsync(int id)
-    //    {
-    //        var users = await _userRepository.GetAllAsync();
-    //        return users.FirstOrDefault(u => u.Id == id);
-    //    }
-    //    public async Task AddUserAsync(User user)
-    //    {
-    //        // Implementar lógica para adicionar usuário
-    //        throw new NotImplementedException();
-    //    }
-    //    public async Task UpdateUserAsync(User user)
-    //    {
-    //        // Implementar lógica para atualizar usuário
-    //        throw new NotImplementedException();
-    //    }
-    //    public async Task DeleteUserAsync(int id)
-    //    {
-    //        // Implementar lógica para deletar usuário
-    //        throw new NotImplementedException();
-    //    }
-
-    //}
 }
 

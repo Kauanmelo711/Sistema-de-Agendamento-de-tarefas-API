@@ -19,5 +19,10 @@
             Senha = senha;
             DataCadastro = DateTime.Now;
         }
+
+        internal static User? FirstOrDefault(Func<object, bool> value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

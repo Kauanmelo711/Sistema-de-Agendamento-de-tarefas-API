@@ -1,5 +1,7 @@
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Microsoft.IdentityModel.Tokens;
 using sistemaDeTarefasT2m.Infraestrutura.Data;
 using sistemaDeTarefasT2m.IRepository;
 using sistemaDeTarefasT2m.IService;
@@ -27,7 +29,31 @@ builder.Services.AddScoped<ITarefasRepository, TarefaRepository>();
 
 builder.Services.AddControllers();
 
+builder.Services.AddScoped<ITokenService, TokenService>();
+
+
 var connectionString = builder.Configuration.GetConnectionString("PostgreSQLConnection");
+
+builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer("Bearer", options =>
+    {
+        var config = builder.Configuration;
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = config["Jwt:Issuer"],
+            ValidAudience = config["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(config["Jwt:Key"]))
+        };
+    });
+
+builder.Services.AddAuthorization();
+
+
 
 builder.Services.AddScoped<PostgresConnection>(provider =>
 {   
@@ -52,6 +78,10 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+app.UseAuthentication();
+
 app.MapControllers();
 
 app.Run();
+
+

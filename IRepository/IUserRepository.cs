@@ -7,6 +7,9 @@ namespace sistemaDeTarefasT2m.IRepository
     {
         
         Task<IEnumerable<User>> GetAllAsync();
+        Task<User> GetByEmailAndPasswordAsync(string email, string senha);
+        Task AddUserAsync(User user);
+
         //Task<User> GetByIdAsync(int id);
         //Task AddAsync(User user);
         //Task UpdateAsync(User user);

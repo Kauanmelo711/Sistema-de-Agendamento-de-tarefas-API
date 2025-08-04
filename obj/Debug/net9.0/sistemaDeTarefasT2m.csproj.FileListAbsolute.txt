@@ -34,3 +34,13 @@ C:\Users\kauan\source\repos\Sistema_de_tarefas_T2m_2\sistemaDeTarefasT2m\obj\Deb
 C:\Users\kauan\source\repos\Sistema_de_tarefas_T2m_2\sistemaDeTarefasT2m\obj\Debug\net9.0\sistemaDeTarefasT2m.genruntimeconfig.cache
 C:\Users\kauan\source\repos\Sistema_de_tarefas_T2m_2\sistemaDeTarefasT2m\obj\Debug\net9.0\ref\sistemaDeTarefasT2m.dll
 C:\Users\kauan\source\repos\Sistema_de_tarefas_T2m_2\sistemaDeTarefasT2m\obj\Debug\net9.0\sistemaDeTarefasT2m.sourcelink.json
+C:\Users\kauan\source\repos\Sistema_de_tarefas_T2m_2\sistemaDeTarefasT2m\bin\Debug\net9.0\JWT.dll
+C:\Users\kauan\source\repos\Sistema_de_tarefas_T2m_2\sistemaDeTarefasT2m\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\kauan\source\repos\Sistema_de_tarefas_T2m_2\sistemaDeTarefasT2m\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\kauan\source\repos\Sistema_de_tarefas_T2m_2\sistemaDeTarefasT2m\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\kauan\source\repos\Sistema_de_tarefas_T2m_2\sistemaDeTarefasT2m\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\kauan\source\repos\Sistema_de_tarefas_T2m_2\sistemaDeTarefasT2m\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\kauan\source\repos\Sistema_de_tarefas_T2m_2\sistemaDeTarefasT2m\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\kauan\source\repos\Sistema_de_tarefas_T2m_2\sistemaDeTarefasT2m\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\kauan\source\repos\Sistema_de_tarefas_T2m_2\sistemaDeTarefasT2m\bin\Debug\net9.0\Newtonsoft.Json.dll
+C:\Users\kauan\source\repos\Sistema_de_tarefas_T2m_2\sistemaDeTarefasT2m\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
