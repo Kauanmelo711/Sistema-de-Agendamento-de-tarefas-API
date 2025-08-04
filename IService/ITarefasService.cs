@@ -9,8 +9,8 @@ namespace sistemaDeTarefasT2m.IService
         Task<IEnumerable<TarefasDto>> GetAllTarefasByUserId();
         //Task<TarefaDto> GetTarefaByIdAsync(int id);
         Task AddTarefaAsync(CreateTarefaDto tarefa);
-        //Task UpdateTarefaAsync(TarefaDto tarefa);
-        //Task DeleteTarefaAsync(int id);
-
+        Task UpdateTarefaAsync(Tarefas tarefa);
+        Task DeleteTarefaAsync(int id);
+        Task UpdateTarefaAsync(int id, UpdateTarefaDto tarefa);
     }
 }

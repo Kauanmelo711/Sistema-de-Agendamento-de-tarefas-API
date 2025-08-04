@@ -34,5 +34,31 @@ namespace sistemaDeTarefasT2m.Service
                  await _tarefaRepository.AddTarefaAsync(tarefaEntity );
             
         }
+        public async Task UpdateTarefaAsync(int id, UpdateTarefaDto tarefa)
+        {
+            var tarefaExistente = await _tarefaRepository.GetTarefaByIdAsync(id);
+            if (tarefaExistente == null)
+                throw new Exception("Tarefa não encontrada.");
+
+            tarefaExistente.Descricao = tarefa.Descricao;
+            tarefaExistente.DataConclusao = tarefa.DataConclusao;
+            tarefaExistente.Status = tarefa.Status;
+
+            await _tarefaRepository.UpdateTarefaAsync(tarefaExistente);
+        }
+
+        public async Task DeleteTarefaAsync(int id)
+        {
+            var tarefa = await _tarefaRepository.GetTarefaByIdAsync(id);
+            if (tarefa == null)
+                throw new Exception("Tarefa não encontrada.");
+
+            await _tarefaRepository.DeleteTarefaAsync(tarefa);
+        }
+
+        public Task UpdateTarefaAsync(Tarefas tarefa)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

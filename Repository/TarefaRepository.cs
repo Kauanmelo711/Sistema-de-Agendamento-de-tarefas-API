@@ -31,14 +31,52 @@ namespace sistemaDeTarefasT2m.Repository
             VALUES(@Descricao, @DataCriacao, @DataConclusao, @UserId)
             RETURNING *;";
 
-           
-           
-
             using (var connection = _dbConnection.GetConnection())
             {
                  await connection.QueryAsync<Tarefas>(query, tarefa);
             }
         }
+        public async Task<Tarefas> GetTarefaByIdAsync(int id)
+{
+    var query = @"SELECT * FROM tarefas WHERE id = @Id";
+    
+    using (var connection = _dbConnection.GetConnection())
+    {
+        return await connection.QueryFirstOrDefaultAsync<Tarefas>(query, new { Id = id });
+    }
+}
+
+public async Task UpdateTarefaAsync(Tarefas tarefa)
+{
+    var query = @"UPDATE tarefas 
+                  SET descricao = @Descricao, 
+                      dataconclusao = @DataConclusao, 
+                      status = @Status::status_enum
+                  WHERE id = @Id";
+
+            var tarefaComStatusString = new
+            {
+                tarefa.Descricao,
+                tarefa.Id,
+                tarefa.DataConclusao,
+                Status = tarefa.Status.ToString()
+            };
+
+            using (var connection = _dbConnection.GetConnection())
+    {
+        await connection.ExecuteAsync(query, tarefaComStatusString);
+    }
+}
+
+public async Task DeleteTarefaAsync(Tarefas tarefa)
+{
+    var query = @"DELETE FROM tarefas WHERE id = @Id";
+
+    using (var connection = _dbConnection.GetConnection())
+    {
+        await connection.ExecuteAsync(query, new { tarefa.Id });
+    }
+}
 
         }
 }

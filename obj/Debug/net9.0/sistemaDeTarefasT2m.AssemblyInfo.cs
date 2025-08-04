@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("sistemaDeTarefasT2m")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+87025d4acc9aef3bc632a60eccffcbb967d2faab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc37d940373318f0dae1e5ed3af18888f327c0cf")]
 [assembly: System.Reflection.AssemblyProductAttribute("sistemaDeTarefasT2m")]
 [assembly: System.Reflection.AssemblyTitleAttribute("sistemaDeTarefasT2m")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

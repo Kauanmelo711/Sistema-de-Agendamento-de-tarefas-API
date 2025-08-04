@@ -42,6 +42,33 @@ namespace sistemaDeTarefasT2m.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+        [HttpPut]
+        public async Task<IActionResult> UpdateTarefa(int id, [FromBody] UpdateTarefaDto tarefa)
+        {
+            try
+            {
+                await _tarefaService.UpdateTarefaAsync(id, tarefa);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Erro interno: {ex.Message}");
+            }
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteTarefa(int id)
+        {
+            try
+            {
+                await _tarefaService.DeleteTarefaAsync(id);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Erro interno: {ex.Message}");
+            }
+        }
 
     }
 }

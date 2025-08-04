@@ -10,8 +10,8 @@ namespace sistemaDeTarefasT2m.IRepository
         Task<IEnumerable<Tarefas>> GetAllTarefasAsync();
         //Task<TarefasDto> GetTarefaByIdAsync(int id);
         Task AddTarefaAsync(Tarefas tarefa);
-        //Task UpdateTarefaAsync(TarefasDto tarefa);
-        //Task DeleteTarefaAsync(int id);
-
+        Task UpdateTarefaAsync(Tarefas tarefa);
+        Task DeleteTarefaAsync(Tarefas tarefa);
+        Task<Tarefas> GetTarefaByIdAsync(int id);
     }
 }

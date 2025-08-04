@@ -46,6 +46,43 @@
     ]
   },
   {
+    "ContainingType": "sistemaDeTarefasT2m.Controllers.TarefasController",
+    "Method": "UpdateTarefa",
+    "RelativePath": "api/Tarefas",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "tarefa",
+        "Type": "sistemaDeTarefasT2m.DTO.UpdateTarefaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "sistemaDeTarefasT2m.Controllers.TarefasController",
+    "Method": "DeleteTarefa",
+    "RelativePath": "api/Tarefas",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "sistemaDeTarefasT2m.Controllers.UserController",
     "Method": "GetAllUsers",
     "RelativePath": "api/User",
