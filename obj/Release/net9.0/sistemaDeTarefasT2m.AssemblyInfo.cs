@@ -12,7 +12,7 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("sistemaDeTarefasT2m")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b46f24e26a8e6b3ba6e7a4dfe1d047e4c22201f3")]
 [assembly: System.Reflection.AssemblyProductAttribute("sistemaDeTarefasT2m")]
